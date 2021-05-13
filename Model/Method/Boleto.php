@@ -154,6 +154,8 @@ class Boleto extends \Magento\Payment\Model\Method\AbstractMethod {
         $dataUser['items'][$i]['item_id'] = 'taxes';
         $dataUser['items'][$i]['price_cents'] = $order->getTaxAmount() * 100;
       }
+      
+      $dataUser['partners_id'] = 'POP52A2Z';
 
       $response = (array)$this->doPayment($dataUser);
 
